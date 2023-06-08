@@ -10,7 +10,7 @@
 
 using namespace CompileTime;
 
-//#ifndef ARDUINO
+#if !defined(ARDUINO) && not ARDUINO_ARCH_RENESAS
 
 #include <stdio.h>
 #include <sys/time.h>
@@ -27,8 +27,6 @@ uint32_t micros() {
     current_time_us = (unsigned long long)(tv.tv_sec) * 1000000 + (unsigned long long)(tv.tv_usec);
     unsigned long long microseconds_since_boot = current_time_us - start_time_us;
 
-//    printf("Microseconds since boot: %llu\n", microseconds_since_boot);
-
     return microseconds_since_boot;
 
 } // micros()
@@ -41,7 +39,7 @@ uint32_t millis() {
 void noInterrupts() { }
 void interrupts() { }
 
-//#endif
+#endif
 
 enum MagicNumbers : uint32_t {
     secsPerMin    =   60UL,
@@ -59,18 +57,16 @@ volatile int16_t CompileTime::second;
 volatile int16_t CompileTime::hour;
 volatile int16_t CompileTime::minute;
 
-void CompileTime::updateTime() {
-    uint32_t now_secs = (micros() / uSecAdjust) + CompileTime::startTime;
+void CompileTime::updateTime(uint32_t const now) {
+    uint32_t now_secs = (now / uSecAdjust) + CompileTime::startTime;
     uint16_t curHour = now_secs / secsPerHour;
     now_secs -= curHour * secsPerHour;
     uint16_t curMinute = now_secs / secsPerMin;
     now_secs -= curMinute * secsPerMin;
 
-    noInterrupts();
     CompileTime::hour = curHour;
     CompileTime::minute = curMinute;
     CompileTime::second = now_secs;
-    interrupts();
 }
 
 void CompileTime::setCompileTime() {
@@ -93,11 +89,9 @@ void CompileTime::setCompileTime() {
         }
     }
 
-    noInterrupts();
     CompileTime::hour   = curHour;
     CompileTime::minute = curMinute;
     CompileTime::second = curSecond;
-    interrupts();
 
     // Set the starting time in seconds since midnight:
     CompileTime::startTime = curHour * secsPerHour + curMinute * secsPerMin + curSecond;

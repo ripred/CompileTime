@@ -17,10 +17,7 @@ namespace CompileTime {
 extern uint32_t startTime;
 extern volatile int16_t second, hour, minute;
 
-void setCompileTime();
-void updateTime();
-
-void updateTime();
+void updateTime(uint32_t const now);
 void setCompileTime();
 
 }
