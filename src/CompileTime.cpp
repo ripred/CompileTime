@@ -3,7 +3,7 @@
  * 
  * implementation file for the CompileTime library
  * 
- * version 1.0 written July 2023 - Trent m. Wyatt
+ * version 1.0 written June 2023 - Trent m. Wyatt
  * 
  */
 #include "CompileTime.h"
