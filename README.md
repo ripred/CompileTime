@@ -36,7 +36,7 @@ void loop() {
         lasts  = second;   lastm  = minute;   lasth  = hour;
 
         char buff[16];
-        sprintf(buff, "%02d:%02d:%02d", hour, minute, second);
+        sprintf(buff, "%2d:%02d:%02d", hour, minute, second);
         Serial.println(buff);
     }
 }
