@@ -1,18 +1,9 @@
-CompileTime Library
-
-This library allows you to use the hours, minutes, and seconds
-from your computer's compile time as 3 initialized variables
-into your project that keep themselves up to date.
-
-Works with or without the Arduino environment.
-
-example use:
-
-```
 /*
  * CompileTime.ino
  * 
  * example Arduino IDE sketch for the CompileTime library
+ * 
+ * version 1.0 written July 2023 - Trent m. Wyatt
  * 
  */
 #include "CompileTime.h"
@@ -20,7 +11,7 @@ example use:
 using namespace CompileTime;
 
 void setup() {
-    setCompileTime();
+    CompileTime::setCompileTime();
     Serial.begin(115200);
 
     // put your setup code here, to run once:
@@ -43,4 +34,3 @@ void loop() {
     }
 
 }
-```
