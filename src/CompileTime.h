@@ -18,7 +18,7 @@ extern uint32_t startTime;
 extern volatile int16_t second, hour, minute;
 
 void updateTime(uint32_t const now);
-void setCompileTime(int const upload);
+void setCompileTime(uint32_t const upload);
 
 }
 #endif // COMPILETIME_H_INCL
