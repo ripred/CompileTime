@@ -11,26 +11,19 @@
 using namespace CompileTime;
 
 void setup() {
-    CompileTime::setCompileTime();
+    CompileTime::setCompileTime(4); // pass the number of seconds it takes to upload
     Serial.begin(115200);
-
-    // put your setup code here, to run once:
 }
 
 void loop() {
-    // put your main code here, to run repeatedly:
-
     static uint16_t lasth = hour, lastm = minute, lasts = second;
-    updateTime();
+    updateTime(micros());
 
     if (lasts != second || lastm != minute || lasth != hour) {
-        lasts = second;
-        lastm = minute;
-        lasth = hour;
+        lasts  = second;   lastm  = minute;   lasth  = hour;
 
         char buff[16];
-        sprintf(buff, "%02d:%02d:%02d", hour, minute, second);
+        sprintf(buff, "%2d:%02d:%02d", hour, minute, second);
         Serial.println(buff);
     }
-
 }
