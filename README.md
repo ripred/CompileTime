@@ -13,7 +13,7 @@ example use:
  * 
  * example Arduino IDE sketch for the CompileTime library
  * 
- * version 1.0 written June 2023 - Trent m. Wyatt
+ * version 1.0 written June 2023 - Trent M. Wyatt
  * 
  */
 #include <Arduino.h>
