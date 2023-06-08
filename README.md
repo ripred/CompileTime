@@ -21,7 +21,7 @@ example use:
 using namespace CompileTime;
 
 void setup() {
-    setCompileTime();
+    setCompileTime(4);  // pass the number of seconds it takes to upload
 
     Serial.begin(115200);
 }
