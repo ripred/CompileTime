@@ -69,7 +69,7 @@ void CompileTime::updateTime(uint32_t const now) {
     CompileTime::second = now_secs;
 }
 
-void CompileTime::setCompileTime() {
+void CompileTime::setCompileTime(uint32_t const upload) {
     // convert the digits from the ascii __TIME__ string into binary values:
     char const tm[9] = __TIME__;
     uint16_t curHour   = ((uint32_t)(tm[0] - '0') * 10UL) + (uint32_t)(tm[1] - '0');
@@ -77,8 +77,7 @@ void CompileTime::setCompileTime() {
     uint16_t curSecond = ((uint32_t)(tm[6] - '0') * 10UL) + (uint32_t)(tm[7] - '0');
 
     // Adjust for the time it took to upload: (change time as needed)
-    uint32_t upload_time_seconds = 4UL;
-    curSecond += upload_time_seconds;
+    curSecond += upload;
     while (curSecond >= secsPerMin) {
         curSecond -= secsPerMin;
         if (++curMinute >= minsPerHour) {
