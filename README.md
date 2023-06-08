@@ -1,11 +1,10 @@
 CompileTime Library
 
-This library allows you to use the hours, minutes, and seconds
-from your computer's compile time as 3 initialized variables
-into your project that keep themselves up to date.
+Include the library in your code, call two functions, and from then on when you next upload your project to your microcontroller it will automatically make the current live, wallclock time of the pc, mac, or linux host that compiled it available as the variables: hour, minute, and second and they will be kept up-to-date as long as the board has power. 
 
-Works with or without the Arduino environment.
+Requires calling just two functions and the current time for your Arduino project will be identical to the current time of your pc, mac, or linux machine down to the second. 
 
+Uses a compileTime namespace so there won't be collisions for those common symbol names. Works with any C/C++ compiler or embedded platform.
 example use:
 
 ```
