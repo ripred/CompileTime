@@ -18,7 +18,6 @@ example use:
  */
 #include <Arduino.h>
 #include <CompileTime.h>
-
 using namespace CompileTime;
 
 void setup() {
