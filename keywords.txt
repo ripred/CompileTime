@@ -9,11 +9,11 @@
 ########################################################
 # Methods, Functions, and Globals (KEYWORD2)
 ########################################################
-setCompileTime           KEYWORD2
-updateTime               KEYWORD2
-hour                     KEYWORD2
-minute                   KEYWORD2
-second                   KEYWORD2
+setCompileTime	KEYWORD2
+updateTime	KEYWORD2
+hour	KEYWORD2
+minute	KEYWORD2
+second	KEYWORD2
 
 ########################################################
 # Constants (LITERAL1)
