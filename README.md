@@ -7,7 +7,7 @@ Requires calling just two functions and the current time for your Arduino projec
 Uses a `CompileTime` namespace so there won't be collisions for those common symbol names. Works with any C/C++ compiler and any embedded platform.
 example use:
 
-```
+```cpp
 /*
  * CompileTime.ino
  * 
