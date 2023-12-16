@@ -164,18 +164,21 @@ void updateTime(uint32_t const now) {
     minute = curMinute;
     second = now_secs;
     if (last_hour != hour) {
-        if (last_hour == 23 && hour == 24) {
-            hour = 0;
+        if (last_hour == 23 && hour >= 24) {
+            hour -= 24;
             day++;
             if (daysInMonth[month] == day) {
                 day = 1;
                 month++;
-                if (month == 13) {
-                    month = 1;
+                if (month >= 13) {
+                    month -= 12;
                     year++;
                 }
             }
         }
+        hour %= 24;
+        minute %= 60;
+        second %= 60;
         last_hour = hour;
     }
 
