@@ -30,6 +30,11 @@ static bool isLeapYear(int year) {
 // Array of days in each month
 static int16_t daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
+// names of months
+const char* months[12] {
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+};
+
 enum MagicNumbers : uint32_t {
     secsPerMin    =   60UL,
     minsPerHour   =   60UL,
@@ -60,7 +65,8 @@ volatile int16_t hour;
 volatile int16_t minute;
 volatile int16_t second;
 volatile int16_t year;
-volatile int16_t month;
+volatile int16_t yue;
+volatile char month[3];
 volatile int16_t day;
 
 // The number of microseconds to calibrate the internal PLL
@@ -132,7 +138,8 @@ void setCompileTime(double const upload) {
     minute = curMinute;
     second = curSecond;
     year   = curYear;
-    month  = curMonth;
+    yue  = curMonth;
+    strcpy(month,months[yue]);
     day    = curDay;
 
     // Set the starting time in seconds since midnight:
@@ -163,24 +170,24 @@ void updateTime(uint32_t const now) {
     hour = curHour;
     minute = curMinute;
     second = now_secs;
-    if (last_hour != hour) {
-        if (last_hour == 23 && hour >= 24) {
-            hour -= 24;
+
+    // date, month, year rollover
+    if (last_hour != hour) {                    // If hour changes{
+        if (last_hour == 23 && hour == 24) {    //      If hour changes to 24{
+            hour = 0;                           //          add day, reset hour
             day++;
-            if (daysInMonth[month] == day) {
-                day = 1;
-                month++;
-                if (month >= 13) {
-                    month -= 12;
+            if (daysInMonth[yue] < day) {       //          If day exceeds the limit of daysInMonth[yue]{
+                day = 1;                        //              add month, reset day
+                yue++;
+                if (yue == 12) {                //              if month is 12, exceeds December (months[11]){
+                    yue = 0;                    //                  add year, reset month
                     year++;
-                }
-            }
-        }
-        hour %= 24;
-        minute %= 60;
-        second %= 60;
-        last_hour = hour;
-    }
+                }                               //                                      }
+                strcpy(month,months[yue]);      //          set month string
+            }                                   //          }
+        }                                       //      }
+        last_hour = hour;                       // set current hour
+    }                                           //}
 
 }
 

@@ -16,7 +16,8 @@ namespace CompileTime {
 // Global values used at runtime
 extern uint32_t startTime;
 extern volatile int16_t second, hour, minute;
-extern volatile int16_t year, month, day;
+extern volatile int16_t year, yue, day;
+extern volatile char month[3];
 extern uint32_t uSecAdjust;
 
 void setCompileTime(double const upload);
