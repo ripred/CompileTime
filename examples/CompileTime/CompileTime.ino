@@ -11,11 +11,6 @@
 
 using namespace CompileTime;
 
-// names of months
-const char* months[12] {
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-};
-
 void setup() {
     CompileTime::setCompileTime(6); // pass the number of seconds it takes to upload
     Serial.begin(115200);
@@ -37,7 +32,7 @@ void loop() {
         lasts  = second;   lastm  = minute;   lasth  = hour;
 
         char buff[16];
-        sprintf(buff, "%s, %d, %d - %2d:%02d:%02d", months[month], day, year, hour, minute, second);
+        sprintf(buff, "%s%d %d - %2d:%02d:%02d", month, day, year, hour, minute, second);
         Serial.println(buff);
     }
 }

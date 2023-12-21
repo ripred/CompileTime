@@ -30,6 +30,11 @@ static bool isLeapYear(int year) {
 // Array of days in each month
 static int16_t daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
+// names of months
+const char* months[12] {
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+};
+
 enum MagicNumbers : uint32_t {
     secsPerMin    =   60UL,
     minsPerHour   =   60UL,
@@ -60,7 +65,8 @@ volatile int16_t hour;
 volatile int16_t minute;
 volatile int16_t second;
 volatile int16_t year;
-volatile int16_t month;
+volatile int16_t yue;
+volatile char month[3];
 volatile int16_t day;
 
 // The number of microseconds to calibrate the internal PLL
@@ -132,7 +138,8 @@ void setCompileTime(double const upload) {
     minute = curMinute;
     second = curSecond;
     year   = curYear;
-    month  = curMonth;
+    yue  = curMonth;
+    strcpy(month,months[yue]);
     day    = curDay;
 
     // Set the starting time in seconds since midnight:
@@ -169,16 +176,17 @@ void updateTime(uint32_t const now) {
         if (last_hour == 23 && hour == 24) {    //      If hour changes to 24{
             hour = 0;                           //          add day, reset hour
             day++;
-            if (daysInMonth[month] < day) {     //          If day exceeds the limit of daysInMonth[month]{
+            if (daysInMonth[yue] < day) {       //          If day exceeds the limit of daysInMonth[yue]{
                 day = 1;                        //              add month, reset day
-                month++;
-                if (month == 12) {              //              if month is 12, exceeds December (months[11]){
-                    month = 0;                  //                  add year, reset month
+                yue++;
+                if (yue == 12) {                //              if month is 12, exceeds December (months[11]){
+                    yue = 0;                    //                  add year, reset month
                     year++;
                 }                               //                                      }
+                strcpy(month,months[yue]);      //          set month string
             }                                   //          }
         }                                       //      }
-        last_hour = hour;                       // set current hoyt
+        last_hour = hour;                       // set current hour
     }                                           //}
 
 }
