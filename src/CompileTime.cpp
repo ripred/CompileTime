@@ -163,24 +163,23 @@ void updateTime(uint32_t const now) {
     hour = curHour;
     minute = curMinute;
     second = now_secs;
-    if (last_hour != hour) {
-        if (last_hour == 23 && hour >= 24) {
-            hour -= 24;
+
+    // date, month, year rollover
+    if (last_hour != hour) {                    // If hour changes{
+        if (last_hour == 23 && hour == 24) {    //      If hour changes to 24{
+            hour = 0;                           //          add day, reset hour
             day++;
-            if (daysInMonth[month] == day) {
-                day = 1;
+            if (daysInMonth[month] < day) {     //          If day exceeds the limit of daysInMonth[month]{
+                day = 1;                        //              add month, reset day
                 month++;
-                if (month >= 13) {
-                    month -= 12;
+                if (month == 12) {              //              if month is 12, exceeds December (months[11]){
+                    month = 0;                  //                  add year, reset month
                     year++;
-                }
-            }
-        }
-        hour %= 24;
-        minute %= 60;
-        second %= 60;
-        last_hour = hour;
-    }
+                }                               //                                      }
+            }                                   //          }
+        }                                       //      }
+        last_hour = hour;                       // set current hoyt
+    }                                           //}
 
 }
 
