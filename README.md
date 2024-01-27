@@ -44,4 +44,4 @@ void loop() {
     }
 }
 ```
-*when printing out the string month, it also prints an extra spacebar; don't leave another spacebar, else it will print double spacebars. --> "%s%d %d"
+
