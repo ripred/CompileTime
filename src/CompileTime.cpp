@@ -66,7 +66,7 @@ volatile int16_t minute;
 volatile int16_t second;
 volatile int16_t year;
 volatile int16_t yue;
-volatile char month[3];
+char month[4];
 volatile int16_t day;
 
 // The number of microseconds to calibrate the internal PLL
@@ -139,7 +139,7 @@ void setCompileTime(double const upload) {
     second = curSecond;
     year   = curYear;
     yue  = curMonth;
-    strcpy(month,months[yue]);
+    strcpy(month, months[yue]);
     day    = curDay;
 
     // Set the starting time in seconds since midnight:
