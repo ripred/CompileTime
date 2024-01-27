@@ -14,14 +14,6 @@ using namespace CompileTime;
 void setup() {
     CompileTime::setCompileTime(6); // pass the number of seconds it takes to upload
     Serial.begin(115200);
-    if (!isEepromValid()) {
-        Serial.println(F("Note that calibration has not been done on this microcontroller"));
-        Serial.println(F("You should exit the IDE and reload it and then load the Calibrate.ino"));
-        Serial.println(F("sketch and let i finish and then enter the hour:minute:second displayed"));
-        Serial.println(F("when you have the timestamps turned on in the serial monitor. After that"));
-        Serial.println(F("the calibration will be stored in EEPROM and the CompileTime library will"));
-        Serial.println(F("stay accurate with 32 milliseconds, and this message will not be displayed."));
-    }
 }
 
 void loop() {
