@@ -17,7 +17,7 @@ namespace CompileTime {
 extern uint32_t startTime;
 extern volatile int16_t second, hour, minute;
 extern volatile int16_t year, yue, day;
-extern volatile char month[3];
+volatile char month[4];
 extern uint32_t uSecAdjust;
 
 void setCompileTime(double const upload);
