@@ -6,6 +6,7 @@
  * version 1.0 written June 2023 - Trent M. Wyatt
  *
  */
+#include <Arduino.h>
 #include "CompileTime.h"
 
 #include <stdio.h>
@@ -13,7 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "EEPROM.h"
+//#include "EEPROM.h"
 
 char const * const tmstr = __TIME__;
 char const * const dtstr = __DATE__;
@@ -73,6 +74,8 @@ volatile int16_t day;
 // generated clock source to (if in use and adjusted):
 uint32_t uSecAdjust = 1000000UL;
 
+
+/*
 void writeUInt32ToEEPROM(uint32_t value, int address) {
     for (int i = 0; i < 4; ++i) {
         EEPROM.write(address + i, (value >> (i * 8)) & 0xFF);
@@ -99,6 +102,7 @@ void writeEepromCalibrate(uint32_t cal_us) {
     writeUInt32ToEEPROM(eeprom_signature, 0);
     writeUInt32ToEEPROM(cal_us, sizeof(eeprom_signature));
 }
+*/
 
 void setCompileTime(double const upload) {
     // convert the digits from the ascii __TIME__ string into binary values:
@@ -144,12 +148,13 @@ void setCompileTime(double const upload) {
 
     // Set the starting time in seconds since midnight:
     startTime = curHour * secsPerHour + curMinute * secsPerMin + curSecond;
-
+/*
     uint32_t const eeprom_signature = 0xDEADBEEF;
     uint32_t const existing_signature = readUInt32FromEEPROM(0);
     if (existing_signature == eeprom_signature) {
         uSecAdjust = readUInt32FromEEPROM(sizeof(eeprom_signature));
     }
+*/
 }
 
 static int16_t last_hour = hour;
