@@ -23,8 +23,8 @@ extern uint32_t uSecAdjust;
 void setCompileTime(double const upload);
 void updateTime(uint32_t const now);
 
-int isEepromValid();
-void writeEepromCalibrate(uint32_t cal_us);
+//int isEepromValid();
+//void writeEepromCalibrate(uint32_t cal_us);
 
 }
 #endif // COMPILETIME_H_INCL
