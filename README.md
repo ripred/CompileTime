@@ -1,3 +1,9 @@
+[![Arduino CI](https://github.com/ripred/CompileTime/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino-lint](https://github.com/ripred/CompileTime/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/CompileTime/actions/workflows/arduino-lint.yml)
+![code size:](https://img.shields.io/github/languages/code-size/ripred/CompileTime)
+[![GitHub release](https://img.shields.io/github/release/ripred/CompileTime.svg?maxAge=3600)](https://github.com/ripred/CompileTime/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/ripred/CompileTime/blob/master/LICENSE)
+
 ****CompileTime Library****
 
 Include the library in your code, call two functions, and from then on when you next compile and upload your project to your microcontroller it will automatically make the current live, wallclock time of the pc, mac, or linux host that compiled it available as the variables: `hour`, `minute`, and `second` and they will be kept up-to-date as long as the board has power. 
