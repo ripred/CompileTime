@@ -1,8 +1,8 @@
-[![Arduino CI](https://github.com/ripred/CompileTime/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino CI](https://github.com/ripred/CompileTime/actions/workflows/arduino_test_runner.yml/badge.svg)](https://github.com/ripred/CompileTime/actions/workflows/arduino_test_runner.yml)
 [![Arduino-lint](https://github.com/ripred/CompileTime/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/CompileTime/actions/workflows/arduino-lint.yml)
-![code size:](https://img.shields.io/github/languages/code-size/ripred/CompileTime)
-[![GitHub release](https://img.shields.io/github/release/ripred/CompileTime.svg?maxAge=3600)](https://github.com/ripred/CompileTime/releases)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/CompileTime/blob/master/LICENSE)
+![code size](https://flat.badgen.net/badge/code%20size/7.9%20KiB/blue)
+[![GitHub release](https://flat.badgen.net/github/release/ripred/CompileTime)](https://github.com/ripred/CompileTime/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/CompileTime/blob/main/LICENSE)
 
 ****CompileTime Library****
 
