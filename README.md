@@ -4,6 +4,11 @@
 [![GitHub release](https://flat.badgen.net/github/release/ripred/CompileTime)](https://github.com/ripred/CompileTime/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/CompileTime/blob/main/LICENSE)
 
+[![JSON check](https://github.com/ripred/CompileTime/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/CompileTime/actions/workflows/jsoncheck.yml)
+[![Arduino Library Manager](https://www.ardu-badge.com/badge/CompileTime.svg)](https://www.ardu-badge.com/CompileTime)
+[![Stars](https://flat.badgen.net/github/stars/ripred/CompileTime)](https://github.com/ripred/CompileTime/stargazers)
+[![Forks](https://flat.badgen.net/github/forks/ripred/CompileTime)](https://github.com/ripred/CompileTime/network/members)
+
 ****CompileTime Library****
 
 Include the library in your code, call two functions, and from then on when you next compile and upload your project to your microcontroller it will automatically make the current live, wallclock time of the pc, mac, or linux host that compiled it available as the variables: `hour`, `minute`, and `second` and they will be kept up-to-date as long as the board has power. 
@@ -44,4 +49,3 @@ void loop() {
     }
 }
 ```
-
