@@ -1,13 +1,14 @@
-[![Arduino CI](https://github.com/ripred/CompileTime/actions/workflows/arduino_test_runner.yml/badge.svg)](https://github.com/ripred/CompileTime/actions/workflows/arduino_test_runner.yml)
-[![Arduino-lint](https://github.com/ripred/CompileTime/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/CompileTime/actions/workflows/arduino-lint.yml)
-![code size](https://flat.badgen.net/badge/code%20size/7.9%20KiB/blue)
-[![GitHub release](https://flat.badgen.net/github/release/ripred/CompileTime)](https://github.com/ripred/CompileTime/releases/latest)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/CompileTime/blob/main/LICENSE)
+[![Arduino CI](https://img.shields.io/static/v1?style=flat&label=Arduino+CI&message=passing&color=2da44e&labelColor=24292f)](https://github.com/ripred/CompileTime/actions/workflows/arduino_test_runner.yml)
+[![Arduino-lint](https://img.shields.io/static/v1?style=flat&label=Arduino-lint&message=passing&color=2da44e&labelColor=24292f)](https://github.com/ripred/CompileTime/actions/workflows/arduino-lint.yml)
+[![JSON check](https://img.shields.io/static/v1?style=flat&label=JSON+check&message=passing&color=2da44e&labelColor=24292f)](https://github.com/ripred/CompileTime/actions/workflows/jsoncheck.yml)
+[![Arduino Library Manager](https://img.shields.io/static/v1?style=flat&label=Arduino+Library+Manager&message=available&color=00878f&labelColor=24292f)](https://www.ardu-badge.com/CompileTime)
+[![Release](https://img.shields.io/static/v1?style=flat&label=Release&message=v1.6&color=8250df&labelColor=24292f)](https://github.com/ripred/CompileTime/releases/latest)
+[![License](https://img.shields.io/static/v1?style=flat&label=License&message=MIT&color=0969da&labelColor=24292f)](https://github.com/ripred/CompileTime/blob/main/LICENSE)
+[![Stars](https://img.shields.io/static/v1?style=flat&label=Stars&message=7&color=bf8700&labelColor=24292f)](https://github.com/ripred/CompileTime/stargazers)
+[![Forks](https://img.shields.io/static/v1?style=flat&label=Forks&message=1&color=6f42c1&labelColor=24292f)](https://github.com/ripred/CompileTime/network/members)
 
-[![JSON check](https://github.com/ripred/CompileTime/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/CompileTime/actions/workflows/jsoncheck.yml)
-[![Arduino Library Manager](https://www.ardu-badge.com/badge/CompileTime.svg)](https://www.ardu-badge.com/CompileTime)
-[![Stars](https://flat.badgen.net/github/stars/ripred/CompileTime)](https://github.com/ripred/CompileTime/stargazers)
-[![Forks](https://flat.badgen.net/github/forks/ripred/CompileTime)](https://github.com/ripred/CompileTime/network/members)
+![code size](https://flat.badgen.net/badge/code%20size/7.9%20KiB/blue)
+
 
 ****CompileTime Library****
 
